@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context="com.example.register_form.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signuptitle"
+        android:text="Register"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_margin="30dp"
+        android:fontFamily="@font/robotlight"
+        />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/signuptitle"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/roundcorner"
+        android:drawableLeft="@drawable/outline_person_24"
+        android:drawablePadding="20dp"
+        android:hint="Username"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/userName"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/roundcorner"
+        android:drawableLeft="@drawable/outline_key_24"
+        android:drawablePadding="20dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/password"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/roundcorner"
+        android:drawableLeft="@drawable/outline_email_24"
+        android:drawablePadding="20dp"
+        android:hint="E-mail Adress"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/email"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/roundcorner"
+        android:drawableLeft="@drawable/outline_local_phone_24"
+        android:drawablePadding="20dp"
+        android:hint="Phone Number"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/country"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/phone"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/roundcorner"
+        android:drawableLeft="@drawable/outline_location_on_24"
+        android:drawablePadding="20dp"
+        android:hint="Country"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="15dp" />
+
+    <LinearLayout
+        android:id="@+id/stat_gen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/country"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/roundcorner"
+            android:drawablePadding="20dp"
+            android:hint="Status"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/gender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/roundcorner"
+            android:drawablePadding="20dp"
+            android:hint="Gender"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/birthdate"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/stat_gen"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/roundcorner"
+        android:drawableLeft="@drawable/outline_calendar_month_24"
+        android:drawablePadding="20dp"
+        android:hint="Birth Date"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_below="@id/birthdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Submit"
+        android:layout_centerHorizontal="true"
+        android:textSize="18dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        />
+
+
+</RelativeLayout>
