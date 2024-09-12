@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 String username = name.getText().toString();
                 String email = email$.getText().toString();
                 String phone = phone$.getText().toString();
-                String country = phone$.getText().toString();
+                String country = country$.getText().toString();
                 String status = status$.getText().toString();
                 String gender = gender$.getText().toString();
                 String birthdate = birthdate$.getText().toString();
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("keygender", gender);
                 intent.putExtra("keybirthdate", birthdate);
 
+
                 startActivity(intent);
             }
         });
@@ -63,4 +64,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+
 }
