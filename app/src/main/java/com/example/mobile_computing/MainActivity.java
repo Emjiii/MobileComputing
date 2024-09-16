@@ -1,4 +1,4 @@
-package com.example.register_form;
+package com.example.mobile_computing;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -10,9 +10,6 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.registor_form.R;
 

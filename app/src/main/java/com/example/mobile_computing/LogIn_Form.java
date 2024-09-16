@@ -1,4 +1,4 @@
-package com.example.register_form;
+package com.example.mobile_computing;
 
 import android.os.Bundle;
 
