@@ -8,12 +8,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.example.registor_form.R;
 
 public class dataForm extends AppCompatActivity {
 
-    private TextView name, email$, phone$, country$, status$, gender$, birthdate$;
+    private TextView name, email$, phone$, province$, status$, gender$, birthdate$;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class dataForm extends AppCompatActivity {
         name = findViewById(R.id.userName);
         email$=findViewById(R.id.email);
         phone$=findViewById(R.id.phone);
-        country$=findViewById(R.id.country);
+        province$=findViewById(R.id.province);
         status$=findViewById(R.id.status);
         gender$=findViewById(R.id.gender);
         birthdate$=findViewById(R.id.birthdate);
@@ -32,7 +31,7 @@ public class dataForm extends AppCompatActivity {
         String username = getIntent().getStringExtra("keyname");
         String email = getIntent().getStringExtra("keyemail");
         String phone = getIntent().getStringExtra("keyphone");
-        String country = getIntent().getStringExtra("keycountry");
+        String country = getIntent().getStringExtra("keyprovince");
         String status = getIntent().getStringExtra("keystatus");
         String gender = getIntent().getStringExtra("keygender");
         String birthdate = getIntent().getStringExtra("keybirthdate");
@@ -41,7 +40,7 @@ public class dataForm extends AppCompatActivity {
         name.setText(username);
         email$.setText(email);
         phone$.setText(phone);
-        country$.setText(country);
+        province$.setText(country);
         status$.setText(status);
         gender$.setText(gender);
         birthdate$.setText(birthdate);
