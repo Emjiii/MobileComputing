@@ -8,96 +8,6 @@
     android:background="@drawable/bg"
     tools:context="com.example.mobile_computing.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/userName"
-        android:layout_marginTop="-20dp"
-        android:paddingBottom="10dp"
-        android:text="Username"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/password"
-        android:layout_marginTop="-20dp"
-        android:paddingBottom="10dp"
-        android:text="Password"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/email"
-        android:layout_marginTop="-20dp"
-        android:paddingBottom="10dp"
-        android:text="E-mail"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/phone"
-        android:layout_marginTop="-20dp"
-        android:paddingBottom="10dp"
-        android:text="Phone Number"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        />
-
-    <LinearLayout
-        android:id="@+id/stat_gen_txt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/stat_gen"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="-20dp"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:textColor="@color/white"
-            android:layout_weight="1"
-            android:text="Status"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-20dp"
-            android:layout_weight="1"
-            android:paddingBottom="10dp"
-            android:text="Gender"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:visibility="visible"
-            tools:visibility="visible" />
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/birthdate"
-        android:layout_marginTop="-20dp"
-        android:paddingBottom="10dp"
-        android:text="Birthdate"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        />
-
 
     <TextView
         android:layout_width="match_parent"
@@ -112,86 +22,108 @@
         />
 
 
-
-
-
-    <EditText
-        android:id="@+id/userName"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userName2"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/signuptitle"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/roundcorner"
-        android:drawableLeft="@drawable/outline_person_24"
-        android:drawablePadding="20dp"
-        android:hint="Username"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="15dp" />
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/userName"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/roundcorner"
+            android:drawableLeft="@drawable/outline_person_24"
+            android:drawablePadding="20dp"
+            android:hint="Username"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="15dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/password"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/userName"
+        android:layout_height="wrap_content"
+        android:id="@+id/password2"
+        android:layout_below="@id/userName2"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="30dp"
-        android:background="@drawable/roundcorner"
-        android:drawableLeft="@drawable/outline_key_24"
-        android:drawablePadding="20dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="15dp" />
+        >
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/roundcorner"
+            android:drawableLeft="@drawable/outline_key_24"
+            android:drawablePadding="20dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="15dp" />
 
-    <EditText
-        android:id="@+id/email"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/password"
+        android:layout_height="wrap_content"
+        android:id="@+id/email2"
+        android:layout_below="@id/password2"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="25dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/roundcorner"
-        android:drawableLeft="@drawable/outline_email_24"
-        android:drawablePadding="20dp"
-        android:hint="E-mail Adress"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="15dp" />
+        android:layout_marginRight="30dp">
 
-    <EditText
-        android:id="@+id/phone"
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/roundcorner"
+            android:drawableLeft="@drawable/outline_email_24"
+            android:drawablePadding="20dp"
+            android:hint="E-mail Adress"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="15dp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/email"
+        android:layout_height="wrap_content"
+        android:id="@+id/phone2"
+        android:layout_below="@id/email2"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="25dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/roundcorner"
-        android:drawableLeft="@drawable/outline_local_phone_24"
-        android:drawablePadding="20dp"
-        android:hint="Phone Number"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="15dp" />
+        android:layout_marginRight="30dp">
 
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/roundcorner"
+            android:drawableLeft="@drawable/outline_local_phone_24"
+            android:drawablePadding="20dp"
+            android:hint="Phone Number"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="15dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/autoCompleteTextView"
-            android:layout_below="@id/phone"
+            android:layout_below="@id/phone2"
             android:layout_marginTop="25dp"
-
             >
 
     <AutoCompleteTextView
@@ -211,6 +143,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <LinearLayout
         android:id="@+id/stat_gen"
         android:layout_width="match_parent"
@@ -219,57 +152,79 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="30dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
-        <EditText
-            android:id="@+id/status"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/roundcorner"
-            android:drawablePadding="20dp"
-            android:hint="Status"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@android:color/darker_gray"
-            android:textSize="15dp" />
-
-        <EditText
-            android:id="@+id/gender"
-            android:layout_width="0dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/roundcorner"
-            android:drawablePadding="20dp"
-            android:hint="Gender"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@android:color/darker_gray"
-            android:textSize="15dp" />
+            >
+
+            <EditText
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/roundcorner"
+                android:drawablePadding="20dp"
+                android:hint="Status"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="15dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           >
+
+           <EditText
+               android:id="@+id/gender"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/roundcorner"
+               android:drawablePadding="20dp"
+               android:hint="Gender"
+               android:padding="10dp"
+               android:textColor="@color/white"
+               android:textColorHint="@android:color/darker_gray"
+               android:textSize="15dp" />
+
+       </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/birthdate"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/birthdate2"
         android:layout_below="@id/stat_gen"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="25dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/roundcorner"
-        android:drawableLeft="@drawable/outline_calendar_month_24"
-        android:drawablePadding="20dp"
-        android:hint="Birth Date"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="15dp" />
+        android:layout_marginRight="30dp">
+
+        <EditText
+            android:id="@+id/birthdate"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/roundcorner"
+            android:drawableLeft="@drawable/outline_calendar_month_24"
+            android:drawablePadding="20dp"
+            android:hint="Birth Date"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="15dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/submitButton"
-        android:layout_below="@id/birthdate"
+        android:layout_below="@id/birthdate2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
