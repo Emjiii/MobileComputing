@@ -38,6 +38,7 @@
                 android:layout_marginRight="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/blueBlack"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -49,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/robotoBlack"
+            android:fontFamily="@font/robotolack"
             android:layout_marginLeft="30dp"
             android:text="Log In"
             android:textSize="30dp"
@@ -67,7 +68,9 @@
             android:text="Please log in to your account"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/blueBlack"
+            />
 
 
         <RelativeLayout
@@ -109,15 +112,18 @@
 
             <Button
                 android:id="@+id/loginBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/logPassword"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_centerHorizontal="true"
                 android:text="Log In"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textColor="@color/lightOrange"
+                android:background="@drawable/btnbackground"
+                />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -131,7 +137,8 @@
                     android:id="@+id/noaccountText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dont have an account?"
+                    android:text="Don't have an account?"
+                    android:textColor="@color/blueBlack"
                     />
 
                 <TextView
@@ -139,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:text="Register"
                     android:paddingLeft="10dp"
-                    android:textColor="#000814"/>
+                    android:textColor="@color/yellowOrange"/>
 
             </LinearLayout>
 
