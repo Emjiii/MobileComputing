@@ -88,33 +88,51 @@
                 android:layout_marginTop="50dp"
                 />
 
-            <EditText
-                android:id="@+id/logUsername"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username"
+                android:id="@+id/logUsername2"
+                android:layout_below="@id/catImg"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_below="@id/catImg"
-                />
+                >
 
-            <EditText
-                android:id="@+id/logPassword"
+                <EditText
+                    android:id="@+id/logUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:layout_below="@id/logUsername"
+                android:id="@+id/logPassword2"
+                android:layout_below="@id/logUsername2"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"/>
+                android:layout_marginRight="30dp">
+
+                <EditText
+                    android:id="@+id/logPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
 
             <Button
                 android:id="@+id/loginBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/logPassword"
+                android:layout_below="@id/logPassword2"
                 android:layout_marginTop="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
