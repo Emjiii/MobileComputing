@@ -24,7 +24,7 @@ public class HelloPage extends AppCompatActivity {
         click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HelloPage.this, LogIn_Form.class);
+                Intent intent = new Intent(HelloPage.this, MainActivity.class);
                 startActivity(intent);
                 //overridePendingTransition(R.anim.scale_in, R.anim.scale_out);
                 overridePendingTransition(500, 0);
