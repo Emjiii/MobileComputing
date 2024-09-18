@@ -12,19 +12,19 @@ import android.content.Intent;
 import com.example.registor_form.R;
 
 public class HelloPage extends AppCompatActivity {
-    private TextView click;
+    private TextView clickText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_hello_page);
-        click = findViewById(R.id.click);
+        clickText = findViewById(R.id.click);
 
-        click.setOnClickListener(new View.OnClickListener() {
+        clickText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HelloPage.this, MainActivity.class);
+                Intent intent = new Intent(HelloPage.this, LogIn_Form.class);
                 startActivity(intent);
                 //overridePendingTransition(R.anim.scale_in, R.anim.scale_out);
                 overridePendingTransition(500, 0);

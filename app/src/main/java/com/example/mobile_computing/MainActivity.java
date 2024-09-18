@@ -20,6 +20,7 @@ import com.example.registor_form.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Firebase;
+import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,8 +28,21 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
     private Button submitButton;
     private EditText name, email$, password$, phone$, province$, status$, gender$, birthdate$;
-    FirebaseAuth mAuth;
-    ProgressBar progressBar;
+    private FirebaseAuth mAuth;
+    private ProgressBar progressBar;
+    private TextView textView;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent = new Intent(getApplicationContext(), dataForm.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
+        textView = findViewById(R.id.regLogin);
 
         submitButton=findViewById(R.id.submitButton);
         name=findViewById(R.id.userName);
@@ -48,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
         birthdate$=findViewById(R.id.birthdate);
         progressBar = findViewById(R.id.progressBar);
 
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LogIn_Form.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         birthdate$.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -59,54 +83,58 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
-                String username = name.getText().toString();
-                String email = email$.getText().toString();
-                String password = password$.getText().toString();
-                String phone = phone$.getText().toString();
-                String province = province$.getText().toString();
-                String status = status$.getText().toString();
-                String gender = gender$.getText().toString();
-                String birthdate = birthdate$.getText().toString();
+                String email1, password1;
+                email1=String.valueOf(email$.getText());
+                password1=String.valueOf(password$.getText());
+                //String username = name.getText().toString();
+//                String phone = phone$.getText().toString();
+//                String province = province$.getText().toString();
+//                String status = status$.getText().toString();
+//                String gender = gender$.getText().toString();
+//                String birthdate = birthdate$.getText().toString();
 
-                if (TextUtils.isEmpty(email)) {
+                if (TextUtils.isEmpty(email1)) {
                     Toast.makeText(MainActivity.this, "Please enter your email", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (TextUtils.isEmpty(password)) {
+                if (TextUtils.isEmpty(password1)) {
                     Toast.makeText(MainActivity.this, "Please enter your password", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                mAuth.createUserWithEmailAndPassword(email, password)
+                
+                mAuth.createUserWithEmailAndPassword(email1, password1)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-
                                     Toast.makeText(MainActivity.this, "Account Created.",
                                             Toast.LENGTH_SHORT).show();
-
+                                        Intent intent = new Intent(getApplicationContext(), LogIn_Form.class);
+                                        startActivity(intent);
+                                        finish();
                                 } else {
                                     // If sign in fails, display a message to the user.
+
                                     Toast.makeText(MainActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
+
+
                                 }
                             }
                         });
 
 
-                Intent intent = new Intent(MainActivity.this, dataForm.class);
-                intent.putExtra("keyname", username);
-                intent.putExtra("keyemail", email);
-                intent.putExtra("keyphone", phone);
-                intent.putExtra("keyprovince", province);
-                intent.putExtra("keystatus", status);
-                intent.putExtra("keygender", gender);
-                intent.putExtra("keybirthdate", birthdate);
 
-                startActivity(intent);
+//                intent.putExtra("keyname", username);
+//                intent.putExtra("keyemail", email);
+//                intent.putExtra("keyphone", phone);
+//                intent.putExtra("keyprovince", province);
+//                intent.putExtra("keystatus", status);
+//                intent.putExtra("keygender", gender);
+//                intent.putExtra("keybirthdate", birthdate);
+
             }
         });
 
