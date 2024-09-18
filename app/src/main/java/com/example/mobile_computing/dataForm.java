@@ -19,12 +19,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class dataForm extends AppCompatActivity {
 
-    FirebaseAuth auth;
-    Button button;
-    TextView textView;
-    FirebaseUser user;
+    private FirebaseAuth auth;
+    private Button button;
+    private FirebaseUser user;
+    private TextView email$;
 
-    private TextView name, email$, phone$, province$, status$, gender$, birthdate$;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,21 +36,21 @@ public class dataForm extends AppCompatActivity {
         user = auth.getCurrentUser();
 
 
-        name = findViewById(R.id.userName);
+//        name = findViewById(R.id.userName);
         email$=findViewById(R.id.email);
-        phone$=findViewById(R.id.phone);
-        province$=findViewById(R.id.province);
-        status$=findViewById(R.id.status);
-        gender$=findViewById(R.id.gender);
-        birthdate$=findViewById(R.id.birthdate);
+//        phone$=findViewById(R.id.phone);
+//        province$=findViewById(R.id.province);
+//        status$=findViewById(R.id.status);
+//        gender$=findViewById(R.id.gender);
+//        birthdate$=findViewById(R.id.birthdate);
 
-        String username = getIntent().getStringExtra("keyname");
-        String email = getIntent().getStringExtra("keyemail");
-        String phone = getIntent().getStringExtra("keyphone");
-        String country = getIntent().getStringExtra("keyprovince");
-        String status = getIntent().getStringExtra("keystatus");
-        String gender = getIntent().getStringExtra("keygender");
-        String birthdate = getIntent().getStringExtra("keybirthdate");
+//        String username = getIntent().getStringExtra("keyname");
+//        String email = getIntent().getStringExtra("keyemail");
+//        String phone = getIntent().getStringExtra("keyphone");
+//        String country = getIntent().getStringExtra("keyprovince");
+//        String status = getIntent().getStringExtra("keystatus");
+//        String gender = getIntent().getStringExtra("keygender");
+//        String birthdate = getIntent().getStringExtra("keybirthdate");
 
         if(user == null){
             Intent intent = new Intent(getApplicationContext(), LogIn_Form.class);
@@ -59,14 +58,14 @@ public class dataForm extends AppCompatActivity {
             finish();
         }
         else {
-            name.setText(username);
+            //name.setText(username);
             email$.setText(user.getEmail());
             //email$.setText(email);
-            phone$.setText(phone);
-            province$.setText(country);
-            status$.setText(status);
-            gender$.setText(gender);
-            birthdate$.setText(birthdate);
+//            phone$.setText(phone);
+//            province$.setText(country);
+//            status$.setText(status);
+//            gender$.setText(gender);
+//            birthdate$.setText(birthdate);
         }
 
         button.setOnClickListener(new View.OnClickListener() {

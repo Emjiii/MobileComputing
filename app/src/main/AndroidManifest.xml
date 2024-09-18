@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Registor_Form"
         tools:targetApi="31">
         <activity
-            android:name="com.example.mobile_computing.LogIn_Form"
+            android:name="com.example.mobile_computing.HelloPage"
             android:exported="false" />
         <activity
             android:name="com.example.mobile_computing.MainActivity"
@@ -24,7 +24,7 @@
             android:name="com.example.mobile_computing.dataForm"
             android:exported="false" />
         <activity
-            android:name="com.example.mobile_computing.HelloPage"
+            android:name="com.example.mobile_computing.LogIn_Form"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

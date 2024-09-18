@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/password2"
-        android:layout_below="@id/userName2"
+        android:layout_below="@id/email2"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
@@ -73,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/email2"
-        android:layout_below="@id/password2"
+        android:layout_below="@id/userName2"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp">
@@ -97,7 +97,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/phone2"
-        android:layout_below="@id/email2"
+        android:layout_below="@id/password2"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp">
@@ -229,7 +229,7 @@
         android:layout_marginTop="20dp"
         android:text="Register"
         android:layout_centerHorizontal="true"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:background="@drawable/btnbackground"
         android:textColor="@color/lightOrange"
         android:layout_marginLeft="30dp"
@@ -244,7 +244,7 @@
         android:layout_marginTop="10dp"
         android:layout_below="@id/submitButton"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
+        android:textColor="@color/blueBlack"
         />
 
 </RelativeLayout>
