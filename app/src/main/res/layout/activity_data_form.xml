@@ -1,252 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.register_form.dataForm"
-    android:background="@drawable/bg"
+    tools:context="com.example.mobile_computing.dataForm"
+    android:background="@color/yellowOrange"
     >
 
-    <RelativeLayout
-        android:layout_width="330sp"
-        android:layout_height="500sp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/rlbg"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         >
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <TextView
             android:id="@+id/info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Information"
-            android:textColor="@color/white"
+            android:textColor="@color/blueBlack"
             android:layout_centerHorizontal="true"
             android:textSize="30dp"
-            android:fontFamily="@font/robotlight"
-            android:padding="15dp"
-        />
+            android:fontFamily="@font/robotolack"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            />
 
-        <LinearLayout
-            android:id="@+id/layoutUserName"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/info"
-            android:paddingTop="10dp"
-            >
-            <TextView
-                android:id="@+id/userNametext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Username:"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
+            android:text="You are currently login as..."
+            android:textSize="15dp"
+            android:textColor="@color/blueBlack"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
+            />
 
-            <TextView
-                android:id="@+id/userName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="name"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutPhone"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/layoutUserName"
-            android:paddingTop="10dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/cardcorner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             >
-            <TextView
-                android:id="@+id/phonetext"
+
+
+            <LinearLayout
+                android:id="@+id/layoutEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                >
+                <TextView
+                    android:id="@+id/emailText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="E-mail:"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="text"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/logoutBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Phone Number:"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/layoutEmail"
+                android:layout_centerHorizontal="true"
+                android:text="Logout"
+                android:textColor="@color/lightOrange"
+                android:background="@drawable/btnbackground"/>
 
-            <TextView
-                android:id="@+id/phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="text"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/layoutEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/layoutPhone"
-            android:paddingTop="10dp"
-            >
-            <TextView
-                android:id="@+id/emailText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="E-mail:"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="text"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutProvince"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/layoutEmail"
-            android:paddingTop="10dp"
-            >
-            <TextView
-                android:id="@+id/provinceText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Province:"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
-
-            <TextView
-                android:id="@+id/province"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="text"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/layoutProvince"
-            android:paddingTop="10dp"
-            >
-            <TextView
-                android:id="@+id/statusText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Status:"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
-
-            <TextView
-                android:id="@+id/status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="text"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutGender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/layoutStatus"
-            android:paddingTop="10dp"
-            >
-            <TextView
-                android:id="@+id/genderText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Gender:"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
-
-            <TextView
-                android:id="@+id/gender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="text"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutBirthdate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/layoutGender"
-            android:paddingTop="10dp"
-            >
-            <TextView
-                android:id="@+id/birthdateText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Birth Date:"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
-
-            <TextView
-                android:id="@+id/birthdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="text"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
-                />
-        </LinearLayout>
-
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

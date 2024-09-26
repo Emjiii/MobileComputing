@@ -1,4 +1,4 @@
-package com.example.register_form;
+package com.example.mobile_computing;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
