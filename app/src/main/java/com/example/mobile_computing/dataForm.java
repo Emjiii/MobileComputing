@@ -75,7 +75,6 @@ public class dataForm extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Calculator.class);
                 startActivity(intent);
-                finish();
             }
         });
 
