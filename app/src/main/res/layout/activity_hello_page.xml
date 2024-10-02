@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cat"
+    android:background="@color/yellowOrange"
     tools:context="com.example.mobile_computing.HelloPage">
 
     <TextView
@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:fontFamily="@font/robotolack"
-        android:padding="20dp"
+        android:paddingTop="50dp"
         android:text="Hello World"
-        android:textColor="@color/lightOrange"
+        android:textColor="@color/blueBlack"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,28 +25,61 @@
         />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/shortInfo"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/HelloID"
+        android:text="Welcome to Mobile Computing"
+        app:layout_constraintBottom_toTopOf="@+id/catLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HelloID" />
+
+    <ImageView
+        android:id="@+id/catLogo"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:src="@drawable/catface"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="20dp"
-        android:text="by MJ Gamilla"
-        android:textColor="@color/lightOrange"
+        app:layout_constraintTop_toBottomOf="@id/shortInfo"
+        android:layout_marginTop="50dp"
         />
 
-    <TextView
+    <Button
         android:id="@+id/click"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="click to start"
-        android:textColor="@color/blueBlack"
-        android:textSize="20dp"
+        android:background="@drawable/btnbackground"
         android:fontFamily="@font/robotlight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="100dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:text="Start"
+        android:textAllCaps="false"
+        android:textColor="@color/lightOrange"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/catLogo"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/myName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"
+        android:textSize="15sp"
+        android:text="Mj Gamilla"
+        android:textColor="@color/darkGrey"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/baseline_copyright_24"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
