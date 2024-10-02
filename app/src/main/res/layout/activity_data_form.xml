@@ -111,6 +111,17 @@
                 android:textColor="@color/lightOrange"
                 android:background="@drawable/btnbackground"/>
 
+            <Button
+                android:id="@+id/continue_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_below="@id/logoutBtn"
+                android:layout_centerHorizontal="true"
+                android:text="Continue"
+                android:textColor="@color/lightOrange"
+                android:background="@drawable/btnbackground"/>
+
         </RelativeLayout>
 
     </LinearLayout>

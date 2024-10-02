@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.ActivityChooserView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -20,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class dataForm extends AppCompatActivity {
 
     private FirebaseAuth auth;
-    private Button button;
+    private Button logout_button, continue_button;
     private FirebaseUser user;
     private TextView email$;
 
@@ -32,7 +33,8 @@ public class dataForm extends AppCompatActivity {
         setContentView(R.layout.activity_data_form);
 
         auth = FirebaseAuth.getInstance();
-        button = findViewById(R.id.logoutBtn);
+        logout_button = findViewById(R.id.logoutBtn);
+        continue_button = findViewById(R.id.continue_Btn);
         user = auth.getCurrentUser();
 
 
@@ -68,7 +70,16 @@ public class dataForm extends AppCompatActivity {
 //            birthdate$.setText(birthdate);
         }
 
-        button.setOnClickListener(new View.OnClickListener() {
+        continue_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Calculator.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        logout_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
