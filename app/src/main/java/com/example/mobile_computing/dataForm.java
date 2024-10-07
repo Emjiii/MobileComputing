@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ActivityChooserView;
 import androidx.core.graphics.Insets;
@@ -17,14 +19,20 @@ import com.google.firebase.Firebase;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class dataForm extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private Button logout_button, continue_button;
-    private FirebaseUser user;
+    private FirebaseUser currentUser;
     private TextView email$;
-
+    private FirebaseDatabase database;
+    private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,42 +40,26 @@ public class dataForm extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_data_form);
 
+
         auth = FirebaseAuth.getInstance();
         logout_button = findViewById(R.id.logoutBtn);
         continue_button = findViewById(R.id.continue_Btn);
-        user = auth.getCurrentUser();
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("users");
+
+        currentUser = auth.getCurrentUser();
 
 
-//        name = findViewById(R.id.userName);
-        email$=findViewById(R.id.email);
-//        phone$=findViewById(R.id.phone);
-//        province$=findViewById(R.id.province);
-//        status$=findViewById(R.id.status);
-//        gender$=findViewById(R.id.gender);
-//        birthdate$=findViewById(R.id.birthdate);
 
-//        String username = getIntent().getStringExtra("keyname");
-//        String email = getIntent().getStringExtra("keyemail");
-//        String phone = getIntent().getStringExtra("keyphone");
-//        String country = getIntent().getStringExtra("keyprovince");
-//        String status = getIntent().getStringExtra("keystatus");
-//        String gender = getIntent().getStringExtra("keygender");
-//        String birthdate = getIntent().getStringExtra("keybirthdate");
-
-        if(user == null){
+        if(currentUser == null){
             Intent intent = new Intent(getApplicationContext(), LogIn_Form.class);
             startActivity(intent);
             finish();
         }
         else {
-            //name.setText(username);
-            email$.setText(user.getEmail());
-            //email$.setText(email);
-//            phone$.setText(phone);
-//            province$.setText(country);
-//            status$.setText(status);
-//            gender$.setText(gender);
-//            birthdate$.setText(birthdate);
+            fetchDataFromFirebase(currentUser.getUid());
+
+
         }
 
         continue_button.setOnClickListener(new View.OnClickListener() {
@@ -90,10 +82,53 @@ public class dataForm extends AppCompatActivity {
 
         //openDialog();
 
+
+
     }
+    private void fetchDataFromFirebase(String uid){
+        reference.child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    HelperClass userData = snapshot.getValue(HelperClass.class);
+
+                    if (userData != null){
+                        TextView usernameTV = findViewById(R.id.dataUserName);
+                        TextView provinceTV = findViewById(R.id.dataProvince);
+                        TextView emailTV = findViewById(R.id.dataEmail);
+                        TextView phoneTV = findViewById(R.id.dataPhone);
+                        TextView statusTV = findViewById(R.id.dataStatus);
+                        TextView genderTV = findViewById(R.id.dataGender);
+                        TextView birthdateTV = findViewById(R.id.dataBirthdate);
+
+                        usernameTV.setText(userData.getUsername());
+                        provinceTV.setText(userData.getProvince());
+                        emailTV.setText(userData.getEmail());
+                        phoneTV.setText(userData.getPhone());
+                        statusTV.setText(userData.getStatus());
+                        genderTV.setText(userData.getGender());
+                        birthdateTV.setText(userData.getBirthdate());
+                    }
+                    else {
+                        Toast.makeText(dataForm.this, "No data found", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(dataForm.this, "Failed to fetch data.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
 
     private void openDialog(){
         DialogFragment dialogFragment = new DialogFragment();
         dialogFragment.show(getSupportFragmentManager(), "example");
     }
+
+
+
 }

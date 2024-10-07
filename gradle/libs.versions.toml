@@ -12,6 +12,7 @@ repo = "Tag"
 googleGmsGoogleServices = "4.4.2"
 firebaseAuth = "23.0.0"
 rhinoAndroid = "1.2.0"
+firebaseDatabase = "21.0.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -25,6 +26,7 @@ blurview = { group = "com.github.Dimezis", name = "BlurView", version.ref = "blu
 repo = { group = "com.github.User", name = "Repo", version.ref = "repo" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 rhino-android = { group = "io.apisense", name = "rhino-android", version.ref = "rhinoAndroid" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

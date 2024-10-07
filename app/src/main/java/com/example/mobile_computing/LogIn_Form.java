@@ -26,6 +26,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class LogIn_Form extends AppCompatActivity {
     private Button loginButton;
@@ -67,7 +73,6 @@ public class LogIn_Form extends AppCompatActivity {
                 finish();
             }
         });
-
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,8 +119,6 @@ public class LogIn_Form extends AppCompatActivity {
                 dialog.show();
             }
         });
-
-
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -157,6 +160,10 @@ public class LogIn_Form extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void readData(){
 
     }
+
 }

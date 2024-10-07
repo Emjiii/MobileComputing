@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/darkGrey"
+    android:background="@color/lightOrange"
     tools:context="com.example.mobile_computing.Calculator">
 
     <LinearLayout
@@ -21,7 +21,7 @@
             android:paddingRight="30dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:textColor="@color/white"
+            android:textColor="@color/blueBlack"
             android:text=""
             android:layout_gravity="end"
             android:textAlignment="textEnd"
@@ -34,7 +34,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:textColor="@color/white"
+            android:textColor="@color/blueBlack"
             android:text=""
             android:textAlignment="textEnd"
             android:layout_gravity="end"
@@ -107,7 +107,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:onClick="sevenOnClick"
                 android:text="7"/>
 
@@ -117,7 +117,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:onClick="eightOnClick"
                 android:text="8"/>
 
@@ -127,7 +127,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:onClick="nineOnClick"
                 android:text="9"/>
 
@@ -155,7 +155,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:onClick="fourOnClick"
                 android:text="4"/>
 
@@ -165,7 +165,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:onClick="fiveOnClick"
                 android:text="5"/>
 
@@ -175,7 +175,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:onClick="sixOnClick"
                 android:text="6"/>
 
@@ -202,7 +202,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:onClick="oneOnClick"
                 android:text="1"/>
 
@@ -212,7 +212,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:text="2"
                 android:onClick="twoOnClick"/>
 
@@ -222,7 +222,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:text="3"
                 android:onClick="threeOnClick"/>
 
@@ -249,7 +249,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:text="."
                 android:onClick="decimalOnClick"/>
 
@@ -259,7 +259,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/calcu_btn_textSize"
                 android:background="@null"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:text="0"
                 android:onClick="zeroOnClick"/>
 

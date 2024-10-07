@@ -44,7 +44,6 @@ public class Calculator extends AppCompatActivity {
         workingsTV.setText(workings);
     }
 
-
     public void equalsOnClick(View view)
     {
         Double result = null;

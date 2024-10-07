@@ -63,19 +63,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="20dp"
             >
-
-
             <LinearLayout
                 android:id="@+id/layoutEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:paddingTop="10dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
                 >
+
                 <TextView
                     android:id="@+id/emailText"
                     android:layout_width="wrap_content"
@@ -87,7 +84,38 @@
                     android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/email"
+                    android:id="@+id/dataEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="text"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/layoutEmail"
+                >
+
+                <TextView
+                    android:id="@+id/usernameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="Username:"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/dataUserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
@@ -100,29 +128,199 @@
             </LinearLayout>
 
 
-            <Button
-                android:id="@+id/logoutBtn"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/layoutPhone"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_below="@id/layoutEmail"
-                android:layout_centerHorizontal="true"
-                android:text="Logout"
-                android:textColor="@color/lightOrange"
-                android:background="@drawable/btnbackground"/>
+                android:orientation="horizontal"
+                android:layout_below="@id/layoutUsername"
+                >
 
-            <Button
-                android:id="@+id/continue_Btn"
+                <TextView
+                    android:id="@+id/phoneText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="Phone:"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/dataPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="text"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutProvince"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/layoutPhone"
+                >
+
+                <TextView
+                    android:id="@+id/provinceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="Province:"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/dataProvince"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="text"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/layoutProvince"
+                >
+
+                <TextView
+                    android:id="@+id/genderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="Gender:"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/dataGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="text"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/layoutGender"
+                >
+
+                <TextView
+                    android:id="@+id/statusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="Status:"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/dataStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="text"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutBirthdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/layoutStatus"
+                >
+
+                <TextView
+                    android:id="@+id/birthdateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="Birthdate:"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/dataBirthdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="text"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:layout_below="@id/logoutBtn"
+                android:layout_below="@id/layoutBirthdate"
                 android:layout_centerHorizontal="true"
-                android:text="Continue"
-                android:textColor="@color/lightOrange"
-                android:background="@drawable/btnbackground"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp"
+                >
+                <Button
+                    android:id="@+id/logoutBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Logout"
+                    android:textColor="@color/lightOrange"
+                    android:background="@drawable/btnbackground"
+                    android:padding="10dp"
+                    android:textAllCaps="false"
+                    android:layout_margin="20dp"
+                    />
+
+                <Button
+                    android:id="@+id/continue_Btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Continue"
+                    android:textColor="@color/lightOrange"
+                    android:background="@drawable/btnbackground"
+                    android:textAllCaps="false"
+                    android:padding="10dp"
+                    android:layout_margin="20dp"/>
+
+
+            </LinearLayout>
+
+
+
 
         </RelativeLayout>
+
+
 
     </LinearLayout>
 

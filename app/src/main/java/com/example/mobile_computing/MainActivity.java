@@ -24,11 +24,15 @@ import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     private Button submitButton;
     private EditText name, email$, password$, phone$, province$, status$, gender$, birthdate$;
     private FirebaseAuth mAuth;
+    private FirebaseDatabase database;
+    private DatabaseReference reference;
     private ProgressBar progressBar;
     private TextView textView;
 
@@ -83,15 +87,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
+
+                database = FirebaseDatabase.getInstance();
+                reference = database.getReference("users");
+
                 String email1, password1;
                 email1=String.valueOf(email$.getText());
                 password1=String.valueOf(password$.getText());
-                //String username = name.getText().toString();
-//                String phone = phone$.getText().toString();
-//                String province = province$.getText().toString();
-//                String status = status$.getText().toString();
-//                String gender = gender$.getText().toString();
-//                String birthdate = birthdate$.getText().toString();
+                String username = name.getText().toString();
+                String phone = phone$.getText().toString();
+                String province = province$.getText().toString();
+                String status = status$.getText().toString();
+                String gender = gender$.getText().toString();
+                String birthdate = birthdate$.getText().toString();
+
+
 
                 if (TextUtils.isEmpty(email1)) {
                     Toast.makeText(MainActivity.this, "Please enter your email", Toast.LENGTH_SHORT).show();
@@ -109,6 +119,13 @@ public class MainActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
+
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    String userId = user.getUid();
+
+                                    HelperClass helperClass = new HelperClass(username, email1, password1, phone, province, status, gender, birthdate);
+                                    reference.child(userId).setValue(helperClass);
+
                                     Toast.makeText(MainActivity.this, "Account Created.",
                                             Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(), LogIn_Form.class);
@@ -124,8 +141,6 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
                         });
-
-
 
 //                intent.putExtra("keyname", username);
 //                intent.putExtra("keyemail", email);
@@ -153,4 +168,6 @@ public class MainActivity extends AppCompatActivity {
 
         dialog.show();
     }
+
+
 }
