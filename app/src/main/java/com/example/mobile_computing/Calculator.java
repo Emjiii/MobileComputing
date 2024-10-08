@@ -1,10 +1,14 @@
 package com.example.mobile_computing;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.registor_form.R;
@@ -23,12 +27,16 @@ public class Calculator extends AppCompatActivity {
     String workings = "";
     String formula = "";
     String tempFormula = "";
+    ImageView history;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
+
         initTextViews();
     }
 
@@ -217,5 +225,20 @@ public class Calculator extends AppCompatActivity {
     public void zeroOnClick(View view)
     {
         setWorkings("0");
+    }
+
+    public void historyOnClick(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(Calculator.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.calculator_history, null);
+        //EditText emailBox = dialogView.findViewById(R.id.emailBox);
+
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        
+        dialog.show();
     }
 }

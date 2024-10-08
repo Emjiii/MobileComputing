@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:layout_margin="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/historyDialogBox"
+        android:background="@drawable/dialog_bg"
+        android:backgroundTint="@color/lightOrange"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/historyText"
+            android:text="History"
+            android:drawableLeft="@drawable/baseline_history_24"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:drawablePadding="20dp"
+            android:drawableTint="@color/white"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/darkGrey"
+            android:background="@drawable/cardcorner"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:id="@+id/history1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/historyText"
+            android:text="History 1"
+            android:layout_margin="10dp"
+            android:textSize="17sp"
+            android:textColor="@color/blueBlack"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

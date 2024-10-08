@@ -162,8 +162,6 @@ public class LogIn_Form extends AppCompatActivity {
         });
     }
 
-    private void readData(){
 
-    }
 
 }
