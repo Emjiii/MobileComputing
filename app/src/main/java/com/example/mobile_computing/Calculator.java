@@ -249,6 +249,15 @@ public class Calculator extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, historyList);
         historyListView.setAdapter(adapter);
 
+        ImageView clear = dialogView.findViewById(R.id.clearHistory);
+
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clearHistory();
+            }
+        });
+
         // Retrieve history
         retrieveHistory();
 
@@ -268,13 +277,6 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot)
             {
-                long count = snapshot.getChildrenCount();
-
-                // If there are 3 or more entries, remove the oldest
-                if (count >= 3) {
-                    String oldestKey = snapshot.getChildren().iterator().next().getKey();
-                    reference.child(oldestKey).removeValue();
-                }
 
                 // Save new calculation
                 reference.push().setValue(calculation);
@@ -299,11 +301,6 @@ public class Calculator extends AppCompatActivity {
                     historyList.add(calculation);
                 }
 
-                // Keep only the latest 3 entries
-                while (historyList.size() > 3) {
-                    historyList.remove(0);
-                }
-
                 adapter.notifyDataSetChanged();
             }
 
@@ -312,4 +309,20 @@ public class Calculator extends AppCompatActivity {
             }
         });
     }
+
+    public void clearHistory() {
+        // Remove all data from Firebase
+        reference.removeValue().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                // Clear local history list
+                historyList.clear();
+                adapter.notifyDataSetChanged();
+
+                Toast.makeText(Calculator.this, "History cleared", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(Calculator.this, "Failed to clear history", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }
