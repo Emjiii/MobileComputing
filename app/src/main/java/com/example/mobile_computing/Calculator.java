@@ -239,6 +239,16 @@ public class Calculator extends AppCompatActivity {
         setWorkings("0");
     }
 
+    public void backSpaceOnClick(View view) {
+        if (workings.length() > 0) {
+            workings = workings.substring(0, workings.length() - 1);
+            workingsTV.setText(workings);
+        } else {
+            workingsTV.setText("");
+        }
+    }
+
+
     public void historyOnClick(View view)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(Calculator.this);
