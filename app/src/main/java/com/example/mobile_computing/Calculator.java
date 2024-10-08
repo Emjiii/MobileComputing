@@ -3,15 +3,23 @@ package com.example.mobile_computing;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.registor_form.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -27,9 +35,11 @@ public class Calculator extends AppCompatActivity {
     String workings = "";
     String formula = "";
     String tempFormula = "";
-    ImageView history;
+    private ArrayList<String> historyList = new ArrayList<>();
+    private ArrayAdapter<String> adapter;
 
-
+    // Firebase Database Reference
+    private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,12 +48,15 @@ public class Calculator extends AppCompatActivity {
         setContentView(R.layout.activity_calculator);
 
         initTextViews();
+
+        // Initialize Firebase Database reference
+        reference = FirebaseDatabase.getInstance().getReference("history");
     }
 
     private void initTextViews()
     {
-        workingsTV = (TextView)findViewById(R.id.workingsTextView);
-        resultsTV = (TextView)findViewById(R.id.resultTextView);
+        workingsTV = findViewById(R.id.workingsTextView);
+        resultsTV = findViewById(R.id.resultTextView);
     }
 
     private void setWorkings(String givenValue)
@@ -59,21 +72,24 @@ public class Calculator extends AppCompatActivity {
         checkForPowerOf();
 
         try {
-            result = (double)engine.eval(formula);
-        } catch (ScriptException e)
-        {
+            result = (double) engine.eval(formula);
+        } catch (ScriptException e) {
             Toast.makeText(this, "Invalid Input", Toast.LENGTH_SHORT).show();
         }
 
-        if(result != null)
-            resultsTV.setText(String.valueOf(result.doubleValue()));
+        if (result != null) {
+            String resultString = String.valueOf(result.doubleValue());
+            resultsTV.setText(resultString);
 
+            // Save calculation to history
+            saveHistory(workings + " = " + resultString);
+        }
     }
 
     private void checkForPowerOf()
     {
         ArrayList<Integer> indexOfPowers = new ArrayList<>();
-        for(int i = 0; i < workings.length(); i++)
+        for (int i = 0; i < workings.length(); i++)
         {
             if (workings.charAt(i) == '^')
                 indexOfPowers.add(i);
@@ -81,7 +97,7 @@ public class Calculator extends AppCompatActivity {
 
         formula = workings;
         tempFormula = workings;
-        for(Integer index: indexOfPowers)
+        for (Integer index : indexOfPowers)
         {
             changeFormula(index);
         }
@@ -93,35 +109,31 @@ public class Calculator extends AppCompatActivity {
         String numberLeft = "";
         String numberRight = "";
 
-        for(int i = index + 1; i< workings.length(); i++)
+        for (int i = index + 1; i < workings.length(); i++)
         {
-            if(isNumeric(workings.charAt(i)))
+            if (isNumeric(workings.charAt(i)))
                 numberRight = numberRight + workings.charAt(i);
             else
                 break;
         }
 
-        for(int i = index - 1; i >= 0; i--)
+        for (int i = index - 1; i >= 0; i--)
         {
-            if(isNumeric(workings.charAt(i)))
+            if (isNumeric(workings.charAt(i)))
                 numberLeft = numberLeft + workings.charAt(i);
             else
                 break;
         }
 
         String original = numberLeft + "^" + numberRight;
-        String changed = "Math.pow("+numberLeft+","+numberRight+")";
-        tempFormula = tempFormula.replace(original,changed);
+        String changed = "Math.pow(" + numberLeft + "," + numberRight + ")";
+        tempFormula = tempFormula.replace(original, changed);
     }
 
     private boolean isNumeric(char c)
     {
-        if((c <= '9' && c >= '0') || c == '.')
-            return true;
-
-        return false;
+        return (c <= '9' && c >= '0') || c == '.';
     }
-
 
     public void clearOnClick(View view)
     {
@@ -135,7 +147,7 @@ public class Calculator extends AppCompatActivity {
 
     public void bracketsOnClick(View view)
     {
-        if(leftBracket)
+        if (leftBracket)
         {
             setWorkings("(");
             leftBracket = false;
@@ -227,10 +239,18 @@ public class Calculator extends AppCompatActivity {
         setWorkings("0");
     }
 
-    public void historyOnClick(View view){
+    public void historyOnClick(View view)
+    {
         AlertDialog.Builder builder = new AlertDialog.Builder(Calculator.this);
         View dialogView = getLayoutInflater().inflate(R.layout.calculator_history, null);
-        //EditText emailBox = dialogView.findViewById(R.id.emailBox);
+
+        ListView historyListView = dialogView.findViewById(R.id.historyLV);  // Use dialogView to find history list view
+
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, historyList);
+        historyListView.setAdapter(adapter);
+
+        // Retrieve history
+        retrieveHistory();
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
@@ -238,7 +258,58 @@ public class Calculator extends AppCompatActivity {
         if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
-        
+
         dialog.show();
+    }
+
+    public void saveHistory(String calculation)
+    {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot)
+            {
+                long count = snapshot.getChildrenCount();
+
+                // If there are 3 or more entries, remove the oldest
+                if (count >= 3) {
+                    String oldestKey = snapshot.getChildren().iterator().next().getKey();
+                    reference.child(oldestKey).removeValue();
+                }
+
+                // Save new calculation
+                reference.push().setValue(calculation);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+    public void retrieveHistory()
+    {
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot)
+            {
+                historyList.clear();
+
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                    String calculation = snapshot1.getValue(String.class);
+                    historyList.add(calculation);
+                }
+
+                // Keep only the latest 3 entries
+                while (historyList.size() > 3) {
+                    historyList.remove(0);
+                }
+
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
     }
 }

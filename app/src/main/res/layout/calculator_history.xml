@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:id="@+id/historyDialogBox"
         android:background="@drawable/dialog_bg"
         android:backgroundTint="@color/lightOrange"
@@ -29,15 +29,15 @@
             android:background="@drawable/cardcorner"
             app:layout_constraintTop_toTopOf="parent"
             />
-        <TextView
-            android:id="@+id/history1"
+
+        <ListView
+            android:id="@+id/historyLV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/historyText"
-            android:text="History 1"
-            android:layout_margin="10dp"
-            android:textSize="17sp"
-            android:textColor="@color/blueBlack"/>
+            android:scrollbars="none"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
