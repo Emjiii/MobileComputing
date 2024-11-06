@@ -15,6 +15,15 @@
         android:theme="@style/Theme.Registor_Form"
         tools:targetApi="31">
         <activity
+            android:name="com.example.mobile_computing.fileTransfer"
+            android:exported="false" />
+        <activity
+            android:name="com.example.mobile_computing.Bluetooth"
+            android:exported="false" />
+        <activity
+            android:name="com.example.mobile_computing.InfraredCommunication"
+            android:exported="false" />
+        <activity
             android:name="com.example.mobile_computing.homepage"
             android:exported="false" />
         <activity

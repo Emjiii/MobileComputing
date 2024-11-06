@@ -63,7 +63,7 @@ public class dataForm extends AppCompatActivity {
         continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Calculator.class);
+                Intent intent = new Intent(getApplicationContext(), homepage.class);
                 startActivity(intent);
             }
         });
