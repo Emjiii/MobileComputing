@@ -58,8 +58,6 @@ public class dataForm extends AppCompatActivity {
         }
         else {
             fetchDataFromFirebase(currentUser.getUid());
-
-
         }
 
         continue_button.setOnClickListener(new View.OnClickListener() {
