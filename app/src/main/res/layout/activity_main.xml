@@ -39,7 +39,7 @@
             android:drawableLeft="@drawable/outline_person_24"
             android:drawablePadding="20dp"
             android:hint="Username"
-            android:textColor="@color/white"
+            android:textColor="@color/blueBlack"
             android:textColorHint="@android:color/darker_gray"
             android:textSize="15dp"
             />
@@ -63,7 +63,7 @@
             android:drawablePadding="20dp"
             android:hint="Password"
             android:paddingBottom="20dp"
-            android:textColor="@color/white"
+            android:textColor="@color/blueBlack"
             android:textColorHint="@android:color/darker_gray"
             android:textSize="15dp" />
 
@@ -86,7 +86,7 @@
             android:drawablePadding="20dp"
             android:hint="E-mail Adress"
             android:paddingBottom="20dp"
-            android:textColor="@color/white"
+            android:textColor="@color/blueBlack"
             android:textColorHint="@android:color/darker_gray"
             android:textSize="15dp" />
 
@@ -110,7 +110,7 @@
             android:drawablePadding="20dp"
             android:hint="Phone Number"
             android:paddingBottom="20dp"
-            android:textColor="@color/white"
+            android:textColor="@color/blueBlack"
             android:textColorHint="@android:color/darker_gray"
             android:textSize="15dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -133,7 +133,7 @@
         android:drawablePadding="20dp"
         android:hint="Province"
         android:paddingBottom="20dp"
-        android:textColor="@color/white"
+        android:textColor="@color/blueBlack"
         android:textColorHint="@android:color/darker_gray"
         android:textSize="15dp"/>
 
@@ -165,7 +165,7 @@
                 android:drawablePadding="20dp"
                 android:hint="Status"
                 android:paddingBottom="20dp"
-                android:textColor="@color/white"
+                android:textColor="@color/blueBlack"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="15dp" />
 
@@ -184,7 +184,7 @@
                android:drawablePadding="20dp"
                android:hint="Gender"
                android:paddingBottom="20dp"
-               android:textColor="@color/white"
+               android:textColor="@color/blueBlack"
                android:textColorHint="@android:color/darker_gray"
                android:textSize="15dp" />
 
@@ -209,7 +209,7 @@
             android:drawablePadding="20dp"
             android:hint="Birth Date"
             android:paddingBottom="20dp"
-            android:textColor="@color/white"
+            android:textColor="@color/blueBlack"
             android:textColorHint="@android:color/darker_gray"
             android:textSize="15dp" />
 
