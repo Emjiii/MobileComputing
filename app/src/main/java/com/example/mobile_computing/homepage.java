@@ -16,7 +16,7 @@ import java.net.CacheRequest;
 
 public class homepage extends AppCompatActivity {
 
-    CardView calculatorCard, infraredCard, bluetoothCard, fileTransferCard;
+    CardView calculatorCard, infraredCard, bluetoothCard, fileTransferCard, shareCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class homepage extends AppCompatActivity {
         infraredCard = findViewById(R.id.infraredSelect);
         bluetoothCard = findViewById(R.id.bluetoothSelect);
         fileTransferCard = findViewById(R.id.fileTransferSelect);
+        shareCard = findViewById(R.id.shareSelect);
 
         calculatorCard.setOnClickListener(view -> {
             Intent intent = new Intent(homepage.this, Calculator.class);
@@ -49,6 +50,10 @@ public class homepage extends AppCompatActivity {
             startActivity(intent);
         });
 
+        shareCard.setOnClickListener(view -> {
+            Intent intent = new Intent(homepage.this, ShareFiles.class);
+            startActivity(intent);
+        });
 
     }
 }
