@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    tools:context="com.example.mobile_computing.Bluetooth">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth File Transfer"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
+
+        <!-- Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Description:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth file transfer is a wireless technology that allows devices to exchange files over short distances (typically up to 10 meters) using radio waves. It enables secure data transfer between devices, like smartphones, laptops, and tablets, without the need for cables or internet connections."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Brief History -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Brief History:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth technology was developed in the 1990s by Ericsson, with the first consumer devices appearing in the early 2000s. Named after the Viking king Harald Bluetooth, who united Denmark and Norway, Bluetooth was designed to unify and simplify wireless communication. The technology became popular for file sharing, hands-free calling, and audio streaming, with updated versions improving speed, range, and security."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Function -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Function:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth file transfer relies on paired devices establishing a connection to exchange data. When a user selects a file to share, the Bluetooth protocol converts it into packets and sends them over a radio frequency (usually 2.4 GHz). The receiving device then reassembles these packets into the original file. Bluetooth employs encryption and security protocols to ensure secure data transfer, though its range is limited."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Real-Life Applications -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Real-Life Applications:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• File Sharing Between Devices: Commonly used to transfer photos, videos, and documents between smartphones, tablets, and computers.\n• Peripheral Connections: Enables wireless communication with devices like printers, headphones, and keyboards.\n• IoT Devices: Used in smart home setups to connect and control devices, such as thermostats and smart locks.\n• Medical Devices: Connects health-monitoring devices like glucose meters and heart rate monitors to smartphones for data tracking."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Key Advantages -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. Key Advantages:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• No Internet Needed: Bluetooth works without Wi-Fi or cellular data, making it accessible in various environments.\n• Energy Efficient: Designed to consume minimal power, which extends battery life in portable devices."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Limitations -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6. Limitations:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Limited Range and Speed: Bluetooth’s effective range is around 10 meters, and file transfer speeds are slower than Wi-Fi.\n• Interference: Operates on a common 2.4 GHz band, which can experience interference from Wi-Fi networks and other wireless devices."/>
+
+    </LinearLayout>
+</ScrollView>

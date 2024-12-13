@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    tools:context="com.example.mobile_computing.fileTransfer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth Device Recognition"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
+
+        <!-- Bluetooth Address -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Bluetooth Address (BD_ADDR):"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  • Each Bluetooth device has a unique 48-bit identifier known as the Bluetooth Device Address (BD_ADDR).\n  • This address is assigned at the factory and helps distinguish each device in the network.\n  • The BD_ADDR functions similarly to a MAC address in Wi-Fi."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Inquiry and Scanning -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Inquiry and Scanning:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  • When a device wants to connect, it initiates an inquiry process to discover nearby Bluetooth devices.\n  • Other devices respond with their Bluetooth addresses and, in some cases, their names.\n  • Inquiry is especially important for pairing new devices and establishing a list of nearby available connections."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Device Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Device Name (Friendly Name):"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  • Each Bluetooth device has a 'friendly name' that is visible to other devices.\n  • This helps users identify devices by names rather than long addresses during pairing.\n  • The name is often customizable by the user, aiding easy recognition."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Pairing and Bonding -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Pairing and Bonding:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  • To establish a trusted connection, devices must go through a pairing process.\n  • During pairing, devices exchange security keys and create a bonded relationship for future connections.\n  • This is done using authentication protocols like PIN codes, passkeys, or simple secure pairing (SSP) methods."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Link Layer Connections -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Link Layer Connections:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  • After identification and pairing, the devices establish a Link Layer connection.\n  • A unique link key, generated during pairing, secures the communication.\n  • The Link Layer uses the BD_ADDR to ensure that data packets are delivered to the correct device."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Profiles and Services -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Profiles and Services:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  • Bluetooth devices also identify each other based on the profiles and services they offer, such as audio, file transfer, or health device profiles.\n  • This allows devices to automatically recognize compatible features and functionalities in each other."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <!-- Role Assignments -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Role Assignments:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  • In a Bluetooth connection, devices take on specific roles, like 'master' and 'slave' (or 'central' and 'peripheral' in Bluetooth Low Energy).\n  • The master device manages the connection parameters, while the slave device responds to master’s instructions.\n  • This role assignment helps organize and coordinate data transfer within a Bluetooth network."/>
+
+    </LinearLayout>
+</ScrollView>
